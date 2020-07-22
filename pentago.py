@@ -5,6 +5,8 @@ import copy
 from baseEnv import HBDenv
 from baseAgent import HBDagent
 
+from dubSeven import dubSeven
+
 BOARD_SIZE = 6
 
 class Pentago(HBDenv):
@@ -221,6 +223,6 @@ class randomAgent(HBDagent):
         return [x, y, quadrant, direction]
 
 if __name__ == "__main__":
-    env = Pentago(BOARD_SIZE,[randomAgent(), randomAgent()], 'history.hbd')
+    env = Pentago(BOARD_SIZE,[dubSeven(), randomAgent()], 'history.hbd')
     while not env.done:
         env.game_step()
